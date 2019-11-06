@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/uikit/css/uikit.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="uk-container">
+        <div class="uk-width-3-5@l">
+          <h1>{{bannerHeader}}</h1>
+          <p>
+            {{bannerDescription}}
+          </p>
+        </div>
+        <div class="uk-container">
+            <div class="uk-text-center uk-grid uk-grid-small">
+                <div class="uk-width-1-3@l uk-grid-margin">
+                    <div class="ribbon"></div>
+                    <div class="card-desc uk-card uk-card-body uk-card-primary">
+                        <div uk-scrollspy="cls:uk-animation-slide-left; delay:300">
+                            {{bannerCards.digitalCard}}
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-width-3-5@l uk-grid-margin">
+                    <div class="uk-grid uk-grid-small uk-child-width-1-4@s uk-child-width-1-1">
+                        {% for cards in bannerCards.cards%}
+                            <a href="#">
+                                <div class="card-content">
+                                    <div class="card uk-card uk-card-body uk-card-default">
+                                        <div>
+                                            <img src={{cards.image}} alt="">
+                                        </div>
+                                        <span>{{cards.description}}</span>
+                                    </div>
+                                    <div class="hidden-content">
+                                        <p>{{cards.hiddenDescription}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </body>
+  <script src="/uikit/js/uikit.js"></script>
+</html>
